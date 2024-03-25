@@ -49,6 +49,7 @@ export const authOptions = {
             console.log(name, email, password);
         },
     },
+    secret: process.env.SECRET,
     session: {
         strategy: 'jwt',
     },
