@@ -3,7 +3,6 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import {getUserByID, getCredentials} from "@/firebase/controller";
 import {createHash} from "crypto";
 
-
 export const authOptions = {
     providers: [
         CredentialsProvider({
@@ -49,7 +48,7 @@ export const authOptions = {
             console.log(name, email, password);
         },
     },
-    secret: process.env.SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
     session: {
         strategy: 'jwt',
     },
