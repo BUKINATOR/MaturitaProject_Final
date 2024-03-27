@@ -4,6 +4,7 @@ import {getCsrfToken} from "next-auth/react"
 import {useRouter} from "next/router";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
+
     return {
         props: {
             csrfToken: await getCsrfToken(context),
@@ -15,12 +16,13 @@ export default function SignIn({csrfToken}: InferGetServerSidePropsType<typeof g
     const router = useRouter()
     return (
         <>
-            <Typography variant="h4" align="center" sx={{marginTop: 10, marginBottom:2}}>
+            <Typography variant="h4" align="center" sx={{marginTop: 10, marginBottom: 2}}>
                 Prihlášení
             </Typography>
             <Grid container justifyContent="center" alignItems="center">
                 <Grid item xs={12} sm={8} md={6} lg={4}>
-                    <form method="post" action="/api/auth/callback/credentials">
+                    <form method="post"
+                          action="https://maturita-project-final.vercel.app/api/auth/callback/credentials">
                         {router.query.error && <span style={{color: "red"}}>{router.query.error}</span>}
                         <input name="csrfToken" type="hidden" defaultValue={csrfToken}/>
                         <Box
@@ -28,8 +30,8 @@ export default function SignIn({csrfToken}: InferGetServerSidePropsType<typeof g
                                 display: 'flex',
                                 flexDirection: 'column',
                                 justifyContent: 'center',
-                                margin: { xs: '10px', sm: 'auto' },
-                                padding: { xs: '10px', sm: '20px' },
+                                margin: {xs: '10px', sm: 'auto'},
+                                padding: {xs: '10px', sm: '20px'},
                                 boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
                                 borderRadius: '10px',
                             }}
