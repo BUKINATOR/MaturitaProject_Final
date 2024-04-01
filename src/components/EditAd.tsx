@@ -62,9 +62,6 @@ export default function EditAd(props: Props) {
                     maxWidth: '726px',
                     width: '100%',
                     margin: '0 auto',
-                    '@media (max-width: 1200px)': {
-                        height: '50vh'
-                    },
                 }}>
                 <form onSubmit={(e) => {
                     e.preventDefault()
@@ -231,10 +228,18 @@ export default function EditAd(props: Props) {
                     </Box>
                 </form>
             </Box>
-            <Box component="div" sx={{position: 'absolute', left: 0, bottom: 0, zIndex: -1}}>
+            <Box component="div" sx={{
+                position: 'absolute', left: 0, bottom: 0, zIndex: -1, '@media (max-width: 1284px)': {
+                    display: 'none',
+                },
+            }}>
                 <img src="/flowers.png" alt="logo"/>
             </Box>
-            <Box component="div" sx={{position: 'absolute', zIndex: -1, right: 0, bottom: 0}}>
+            <Box component="div" sx={{
+                position: 'absolute', zIndex: -1, right: 0, bottom: 0, '@media (max-width: 674px)': {
+                    display: 'none',
+                },
+            }}>
                 <img src="/Women_cleaner.png" alt="logo"/>
             </Box>
         </>
