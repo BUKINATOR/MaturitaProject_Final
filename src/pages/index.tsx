@@ -58,7 +58,16 @@ const index: React.FC = () => {
             }}>
                 <img src="Women.png" alt="logo"/>
             </Box>
-            <Box component="div" sx={{position: 'absolute', zIndex: -1, left: 0, marginTop: -15, marginLeft: -35}}>
+            <Box component="div" sx={{
+                position: 'absolute',
+                zIndex: -1,
+                left: 0,
+                marginTop: -15,
+                marginLeft: -35,
+                '@media (max-width: 484px)': {
+                    display: 'none',
+                }
+            }}>
                 <img src="Dog1.png" alt="logo"/>
             </Box>
             <Typography
@@ -68,6 +77,9 @@ const index: React.FC = () => {
                     fontFamily: 'Bebas Neue',
                     fontWeight: 400,
                     paddingTop: 55,
+                    '@media (max-width: 484px)': {
+                        display: 'none',
+                    },
                     fontSize: {
                         xs: '2rem',  // Adjust the font size for extra small screens
                         sm: '2rem',  // Adjust the font size for small screens
@@ -78,7 +90,11 @@ const index: React.FC = () => {
             >
                 JEDNODUCHÝ POSTUP
             </Typography>
-            <Stack direction="row" spacing={5} sx={{alignItems: 'center', justifyContent: 'center', paddingTop: 10}}>
+            <Stack direction="row" spacing={5} sx={{
+                alignItems: 'center', justifyContent: 'center', paddingTop: 10, '@media (max-width: 484px)': {
+                    display: 'none',
+                },
+            }}>
                 <Iconcomponent
                     icon={<NotesOutlinedIcon sx={{color: '#51B371', fontSize: ['10vw', '8vw', '6vw']}}/>}
                     index={1}
@@ -100,7 +116,11 @@ const index: React.FC = () => {
                     Začni vydělávat
                 </Iconcomponent>
             </Stack>
-            <Stack direction="row" spacing={5} sx={{alignItems: 'center', justifyContent: 'center', paddingTop: 10}}>
+            <Stack direction="row" spacing={5} sx={{
+                alignItems: 'center', justifyContent: 'center', paddingTop: 10, '@media (max-width: 484px)': {
+                    display: 'none',
+                }
+            }}>
                 <Iconcomponent
                     icon={<PeopleAltOutlinedIcon sx={{color: '#51B371', fontSize: ['10vw', '8vw', '6vw']}}/>}
                     index={1}
